@@ -1,0 +1,52 @@
+#!/bin/tcsh 
+
+set NFILES  = 900000000
+set OUTPUT  = $1
+set binName = $2
+
+source /group/clas/builds/centos7/environment.csh
+setenv h22libs /u/home/sdiehl
+setenv LD_LIBRARY_PATH /u/home/sdiehl/lib/:$LD_LIBRARY_PATH
+setenv ANALTOP /volatile/clas12/sdiehl/clas6/analysis
+
+cp list.*.dat list.dat 
+chmod +x $binName
+
+# helicity check 
+#./$binName -N=$NFILES -PARS=$ANALTOP/lists/data.pars -OUT=del.root -LIST=list.dat 
+#cp Asymmetry.root $OUTPUT
+
+# Asymmetry Script 
+./$binName -N=$NFILES -LIST=list.dat -PARS=$h22libs/lists/data.pars -OUT=$OUTPUT
+
+# Elastic Script 
+#./$binName -N=$NFILES -TYPE=data -WMIN=0.1 -WMAX=1.1 -LIST=list.dat -PARS=/u/home/dmriser/mydoc/analysis/root_scripts/Analysis_v2/lists/data.pars -OUT=$OUTPUT
+
+#./$binName -N=$NFILES -LIST=list.dat -PARS=/u/home/dmriser/mydoc/analysis/root_scripts/Analysis_v2/lists/data.pars -OUT=$OUTPUT
+#./$binName -N=$NFILES -TYPE=data -YCUT=0.70 -PMIN=0.5 -LIST=list.dat -PARS=/u/home/dmriser/mydoc/analysis/root_scripts/Analysis_v2/lists/data.pars -OUT=$OUTPUT
+#./$binName -N=$NFILES -TYPE=mcrad -YCUT=0.70 -PMIN=0.5 -LIST=list.dat -PARS=/u/home/dmriser/mydoc/analysis/root_scripts/Analysis_v2/lists/keppelRad.pars -OUT=$OUTPUT
+#./$binName -TYPE=rec -N=$NFILES -LIST=list.dat -PARS=/u/home/dmriser/mydoc/analysis/root_scripts/Analysis_v2/lists/data.pars -OUT=$OUTPUT 
+#./$binName -N=$NFILES -TYPE=data -YCUT=1.0 -PMIN=2.0 -LIST=list.dat -PARS=/u/home/dmriser/mydoc/analysis/root_scripts/Analysis_v2/lists/data.pars -OUT=$OUTPUT 
+#./$binName -N=$NFILES -TYPE=mcrad -LIST=list.dat -PARS=/u/home/dmriser/mydoc/analysis/root_scripts/Analysis_v2/lists/keppelRad.pars -OUT=$OUTPUT 
+
+# ---------------------------------------------------
+# Slightly more complicated procedure for this code, 
+# running files 1 at a time 
+# ---------------------------------------------------
+
+#set allFiles    = `cat list.dat`
+#set currentFile = 1
+
+#foreach file ($allFiles)
+#    ./$binName -PARS=/u/home/dmriser/mydoc/analysis/root_scripts/Analysis_v2/lists/data.pars -OUT=job.$currentFile.root $file
+#    @ currentFile++
+#end
+
+# ------------------------------------------------
+#  Get the hadd utility and combine then copy 
+# ------------------------------------------------
+#source /group/clas/builds/centos65/environment.csh 
+#hadd $OUTPUT job.*.root 
+
+
+ 

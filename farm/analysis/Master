@@ -1,0 +1,42 @@
+#!/bin/tcsh 
+
+# User Parameters 
+set numberOfJobs = 20
+
+set binDir       = "/volatile/clas12/sdiehl/clas6/myprojects/projects/ele_pim/src"
+set binName      = "fill"
+set sourceDir    = "/volatile/clas12/sdiehl/clas6/myprojects/farm/analysis"
+set outDir       = "/volatile/clas12/sdiehl/clas6/myprojects/farm/farm_out"
+set outName      = "ele_pim_test"
+set runScript    = "goAnalyze"
+set fileList     = "/volatile/clas12/sdiehl/clas6/analysis-main/lists/files/data/good_files.dat"
+
+
+# Create the output
+# dir if it doesnt exist
+mkdir -p $outDir/$outName
+cp $runScript $outDir/$outName/$runScript
+
+# Splits the master list into numberOfJobs
+# smaller lists to be used on the nodes.
+./buildFileList $numberOfJobs $fileList
+
+# Get our list of jobs 
+set allLists = `ls *.dat`
+
+# Send the jobs
+set currentList = 1
+foreach list ($allLists) 
+    ./buildJsub $allLists[$currentList] analysis.$currentList.jsub $binDir $binName $outDir/$outName $outName.$currentList.root $sourceDir $runScript
+    mv $list $outDir/$outName/$list
+    jsub analysis.$currentList.jsub 
+    @ currentList++
+end
+
+# Clean 
+rm analysis.*.jsub 
+rm list.*.dat
+
+# Brag about it 
+echo " >> Done, output dir created. "
+ls $outDir/$outName

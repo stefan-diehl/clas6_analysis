@@ -1,0 +1,33 @@
+#!/bin/tcsh 
+
+# Farm Parameters 
+set fileList  = $1 
+set jsubName  = $2 
+set binDir    = $3
+set binName   = $4
+set outDir    = $5 
+set outName   = $6
+set sourceDir = $7
+set runScript = $8
+
+set jobNumber = `echo $fileList | cut -d'.' -f2`
+
+# Make Jsub 
+echo "NAME: E1F-Analysis"                                           > $jsubName
+echo "PROJECT: E1F"                                                 >> $jsubName 
+echo "TRACK: simulation"                                            >> $jsubName 
+echo "TIME: 240"                                                    >> $jsubName  
+echo "MEMORY: 4096 MB"                                              >> $jsubName
+echo "OS: CENTOS7"                                                  >> $jsubName
+echo " "                                                            >> $jsubName 
+echo "COMMAND: chmod +x $runScript; ./$runScript out.root $binName" >> $jsubName 
+echo " "                                                            >> $jsubName 
+echo "OTHER_FILES: "                                                >> $jsubName 
+echo "$outDir/$runScript"                                           >> $jsubName
+echo "$outDir/$fileList"                                            >> $jsubName
+echo "$binDir/$binName"                                             >> $jsubName
+echo " "                                                            >> $jsubName 
+echo "OUTPUT_DATA: out.root"                                        >> $jsubName  
+echo "OUTPUT_TEMPLATE: $outDir/$outName"                            >> $jsubName 
+
+ 

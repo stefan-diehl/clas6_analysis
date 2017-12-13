@@ -1,0 +1,9 @@
+#!/bin/tcsh 
+
+set fileList = $1 
+set filesPerJob = $2 
+
+set numberOfFiles = `wc -l $fileList | awk '{print $1}'`
+set numberOfFilesPerJob = `echo $numberOfFiles $filesPerJob | awk '{print ceil$1/$2}' | awk '{printf(" %d\n",$0+=$0<0?0:0.9)}'`
+
+echo "$numberOfFilesPerJob"

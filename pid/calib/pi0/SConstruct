@@ -1,0 +1,13 @@
+import os, glob
+
+exeEnv = Environment(ENV = {'PATH':os.environ['PATH']}, h22libs=os.environ['h22libs'])
+exeEnv.ParseConfig("root-config --glibs --cflags")
+exeEnv.Append(CCFLAGS = ['-g'])
+exeEnv.Append(CPPPATH = ['$h22libs/include/'], LIBPATH = ['$h22libs/lib/'],LIBS = ['h22'])
+exeEnv.Append(LIBPATH = ['$ROOTSYS/lib/'],LIBS = ['TreePlayer'])
+
+sources = glob.glob('*.cxx')
+
+for target in sources:
+    exeEnv.Program(target)
+

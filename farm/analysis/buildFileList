@@ -1,0 +1,20 @@
+#!/bin/tcsh 
+
+set totalJobs   = $1 
+set list        = $2 
+set files       = `cat $list`
+set filesPerJob = `./getFilesPerJob $list $totalJobs`
+
+set item = 0
+set currentFile = 0
+touch list.0.dat 
+foreach file ($files)  
+    echo $file >> list.$currentFile.dat 
+    @ item++
+    
+    if ($item == $filesPerJob) then 
+	@ currentFile++
+	set item = 0
+	touch list.$currentFile.dat 
+    endif
+end 

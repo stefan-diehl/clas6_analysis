@@ -1,0 +1,14 @@
+import os, glob
+
+env = Environment(ENV = {'PATH':os.environ['PATH']}, h22libs=os.environ['h22libs'])
+env.ParseConfig("root-config --glibs --cflags")
+env.Append(CCFLAGS = ['-g','-std=c++11'])
+env.Append(CPPPATH = ['$h22libs/include/analysis/', '$h22libs/include/database/', '$h22libs/include/io/',
+		       '$h22libs/include/histogram/', '$h22libs/include/nathan/', 
+		       '$h22libs/include/tools/', '$h22libs/include/config/', '$h22libs/momCorr/'])
+env.Append(LIBPATH = ['$h22libs/lib/'],LIBS = ['h22'])
+
+sources = glob.glob('src/*.cxx')
+
+for target in sources:
+    env.Program(target)

@@ -1,0 +1,74 @@
+# Filename: data.pars
+# Last edited at: Thu Apr  6 11:21:25 2017
+         EL_CCT_MU_A     6     v                   0                   0                   0                   0                   0                   0
+         EL_CCT_MU_A     6     e          0.00332047          0.00332047          0.00332047          0.00332047          0.00332047          0.00332047
+         EL_CCT_MU_B     6     v                   0                   0                   0                   0                   0                   0
+         EL_CCT_MU_B     6     e           0.0856997           0.0856997           0.0856997           0.0856997           0.0856997           0.0856997
+         EL_CCT_MU_C     6     v                   0                   0                   0                   0                   0                   0
+         EL_CCT_MU_C     6     e            0.636885            0.636885            0.636885            0.636885            0.636885            0.636885
+         EL_CCT_MU_D     6     v                   0                   0                   0                   0                   0                   0
+         EL_CCT_MU_D     6     e             1.28922             1.28922             1.28922             1.28922             1.28922             1.28922
+       EL_CCT_NSIGMA     1     v                   4
+       EL_CCT_NSIGMA     1     e                   0
+      EL_CCT_SIGMA_A     6     v                   0                   0                   0                   0                   0                   0
+      EL_CCT_SIGMA_A     6     e          0.00332047          0.00332047          0.00332047          0.00332047          0.00332047          0.00332047
+      EL_CCT_SIGMA_B     6     v                   0                   0                   0                   0                   0                   0
+      EL_CCT_SIGMA_B     6     e           0.0856997           0.0856997           0.0856997           0.0856997           0.0856997           0.0856997
+      EL_CCT_SIGMA_C     6     v                   0                   0                   0                   0                   0                   0
+      EL_CCT_SIGMA_C     6     e            0.636885            0.636885            0.636885            0.636885            0.636885            0.636885
+      EL_CCT_SIGMA_D     6     v                   0                   0                   0                   0                   0                   0
+      EL_CCT_SIGMA_D     6     e             1.28922             1.28922             1.28922             1.28922             1.28922             1.28922
+          EL_CC_FIDA     1     v                  46
+          EL_CC_FIDA     1     e                   0
+          EL_CC_FIDB     1     v                  35
+          EL_CC_FIDB     1     e                   0
+          EL_CC_FIDC     1     v                 360
+          EL_CC_FIDC     1     e                   0
+        EL_DCR1_FIDA     1     v                  60
+        EL_DCR1_FIDA     1     e                   0
+        EL_DCR1_FIDH     1     v                  22
+        EL_DCR1_FIDH     1     e                   0
+        EL_DCR3_FIDA     1     v                  49
+        EL_DCR3_FIDA     1     e                   0
+        EL_DCR3_FIDH     1     v                  80
+        EL_DCR3_FIDH     1     e                   0
+          EL_ECU_MAX     1     v                 400
+          EL_ECU_MAX     1     e                   0
+          EL_ECU_MIN     1     v                  70
+          EL_ECU_MIN     1     e                   0
+          EL_ECV_MAX     1     v                 362
+          EL_ECV_MAX     1     e                   0
+          EL_ECV_MIN     1     v                   0
+          EL_ECV_MIN     1     e                   0
+          EL_ECW_MAX     1     v                 395
+          EL_ECW_MAX     1     e                   0
+          EL_ECW_MIN     1     v                   0
+          EL_ECW_MIN     1     e                   0
+      EL_EC_EDEP_MIN     1     v                0.05
+      EL_EC_EDEP_MIN     1     e                   0
+        EL_EC_NSIGMA     1     v                   3
+        EL_EC_NSIGMA     1     e                   0
+         EL_NPHE_MAX     1     v                 999
+         EL_NPHE_MAX     1     e                   0
+         EL_NPHE_MIN     1     v                  25
+         EL_NPHE_MIN     1     e                   0
+          EL_SF_MU_A     6     v                   0                   0                   0                   0                   0                   0
+          EL_SF_MU_A     6     e           0.0857011           0.0857011           0.0857011           0.0857011           0.0857011           0.0857011
+          EL_SF_MU_B     6     v                   0                   0                   0                   0                   0                   0
+          EL_SF_MU_B     6     e            0.638295            0.638295            0.638295            0.638295            0.638295            0.638295
+          EL_SF_MU_C     6     v                   0                   0                   0                   0                   0                   0
+          EL_SF_MU_C     6     e             1.42163             1.42163             1.42163             1.42163             1.42163             1.42163
+          EL_SF_MU_D     6     v                   0                   0                   0                   0                   0                   0
+          EL_SF_MU_D     6     e            0.912076            0.912076            0.912076            0.912076            0.912076            0.912076
+       EL_SF_SIGMA_A     6     v                   0                   0                   0                   0                   0                   0
+       EL_SF_SIGMA_A     6     e           0.0857011           0.0857011           0.0857011           0.0857011           0.0857011           0.0857011
+       EL_SF_SIGMA_B     6     v                   0                   0                   0                   0                   0                   0
+       EL_SF_SIGMA_B     6     e            0.638295            0.638295            0.638295            0.638295            0.638295            0.638295
+       EL_SF_SIGMA_C     6     v                   0                   0                   0                   0                   0                   0
+       EL_SF_SIGMA_C     6     e             1.42163             1.42163             1.42163             1.42163             1.42163             1.42163
+       EL_SF_SIGMA_D     6     v                   0                   0                   0                   0                   0                   0
+       EL_SF_SIGMA_D     6     e            0.912076            0.912076            0.912076            0.912076            0.912076            0.912076
+           EL_VZ_MAX     1     v            -22.6864
+           EL_VZ_MAX     1     e                   0
+           EL_VZ_MIN     1     v            -27.7302
+           EL_VZ_MIN     1     e                   0

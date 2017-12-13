@@ -1,0 +1,12 @@
+import os, glob
+
+exeEnv = Environment(ENV = {'PATH':os.environ['PATH']}, h22libs=os.environ['h22libs'])
+exeEnv.ParseConfig("root-config --glibs --cflags")
+exeEnv.Append(CCFLAGS = ['-g','-std=c++11'])
+exeEnv.Append(CPPPATH = ['$h22libs/include/'], LIBPATH = ['$h22libs/lib/'],LIBS = ['h22'])
+exeEnv.Append(CPPPATH = ['$ROOTSYS/include/'], LIBPATH = ['$ROOTSYS/lib/'],LIBS = ['TreePlayer','TMVA','Minuit','XMLIO','MLP'])
+
+sources = glob.glob('src/*.cxx')
+
+for target in sources:
+    exeEnv.Program(target)

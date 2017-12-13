@@ -1,0 +1,10 @@
+import os
+
+env = Environment(ENV = {'PATH':os.environ['PATH']})
+
+env.ParseConfig("root-config --glibs --cflags")
+env.Append(CCFLAGS = ['-g'])
+#env.Append(CPPPATH = ['/u/home/dmriser/include/'], LIBPATH = ['/u/home/dmriser/lib/'],LIBS = ['h22'])
+env.Append(CPPPATH = ['/usr/local/include/'], LIBPATH = ['/usr/local/lib/'],LIBS = ['h22'])
+
+env.Program('hid_histos','hid_histos.cxx')

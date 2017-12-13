@@ -1,0 +1,31 @@
+
+ # Parameter File hpars.dat Updated at Sun Jul 17 10:55:39 2016
+
+
+ # All Hadrons 
+
+ # Z-Vertex Difference Between Electron and Hadron Limits 
+     DVZMIN:          -3
+     DVZMAX:           3
+
+ # Drift Chamber Region 1 Fiducial Height and Angle 
+   DCR1FIDH:          22
+   DCR1FIDA:          60
+
+ # Protons 
+
+ # Delta Beta Assuming Proton Min/Max
+ PROT_DBMIN:       -0.05       -0.05       -0.05       -0.05       -0.05       -0.05
+ PROT_DBMAX:        0.05        0.05        0.05        0.05        0.05        0.05
+
+ # Pi + 
+
+ # Delta Beta Assuming Pi + Min/Max
+  PIP_DBMIN:       -0.05       -0.05       -0.05       -0.05       -0.05       -0.05
+  PIP_DBMAX:        0.05        0.05        0.05        0.05        0.05        0.05
+
+ # Pi - 
+
+ # Delta Beta Assuming Pi - Min/Max
+  PIM_DBMIN:       -0.05       -0.05       -0.05       -0.05       -0.05       -0.05
+  PIM_DBMAX:        0.05        0.05        0.05        0.05        0.05        0.05
