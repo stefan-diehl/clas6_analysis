@@ -1,0 +1,15 @@
+
+# outputs
+*.pdf
+*.png
+*.root 
+
+# libs
+*.o
+*.a
+*.os
+*.so
+
+# variety of annoyances 
+*~
+*.scons* 
