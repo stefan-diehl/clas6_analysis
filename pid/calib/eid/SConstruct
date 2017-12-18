@@ -9,6 +9,7 @@ env.Append(CPPPATH = ['$h22libs/include/analysis/', '$h22libs/include/database/'
 env.Append(LIBPATH = ['$h22libs/lib/'],LIBS = ['h22'])
 
 sources = glob.glob('src/*.cxx')
+sources.remove('src/findElectronIDParameters.cxx')
 
 for target in sources:
     env.Program(target)
